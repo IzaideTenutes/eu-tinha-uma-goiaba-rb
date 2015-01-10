@@ -4,7 +4,7 @@ class CompraPassagem
   end
 
   def pode_fazer?(dinheiro_na_carteira, estar_faminto = false)
-    self.valor <= dinheiro_na_carteira
+    valor <= dinheiro_na_carteira
   end
 
   def descricao
