@@ -11,20 +11,18 @@ class Decisor
 
 	def decide
 		decisao = []
+		opcoes = [
+			CompraGoiaba.new,
+			CompraPassagem.new
+		]
+    
+    opcoes.each do | opcao |
+      if opcao.pode_fazer? dinheiro_na_carteira, estar_faminto
+        paga opcao.valor 
+        decisao << opcao.descricao
+      end
+    end
 
-		compra_goiaba = CompraGoiaba.new
-		compra_passagem = CompraPassagem.new
-
-		if compra_goiaba.pode_fazer?(dinheiro_na_carteira, estar_faminto)
-			paga(compra_goiaba.valor)
-			decisao << compra_goiaba.descricao
-		end
-		
-		if compra_passagem.pode_fazer?(dinheiro_na_carteira)
-			paga(compra_passagem.valor)
-			decisao << compra_passagem.descricao
-		end
-		
 		decisao.join(" e ")
 	end
 

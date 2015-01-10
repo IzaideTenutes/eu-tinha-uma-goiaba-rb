@@ -5,7 +5,7 @@ class CompraPassagem
 		self.valor = 1.5
 	end
 
-	def pode_fazer?(dinheiro_na_carteira)
+	def pode_fazer?(dinheiro_na_carteira, estar_faminto = false)
  		self.valor <= dinheiro_na_carteira
 	end
 
