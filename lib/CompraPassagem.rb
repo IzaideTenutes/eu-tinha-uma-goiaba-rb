@@ -1,15 +1,13 @@
 class CompraPassagem
-	attr_accessor :valor
+  def valor
+    1.5
+  end
 
-	def initialize
-		self.valor = 1.5
-	end
+  def pode_fazer?(dinheiro_na_carteira, estar_faminto = false)
+    self.valor <= dinheiro_na_carteira
+  end
 
-	def pode_fazer?(dinheiro_na_carteira, estar_faminto = false)
- 		self.valor <= dinheiro_na_carteira
-	end
-
-	def descricao
-		'comprar passagem'
-	end
+  def descricao
+    'comprar passagem'
+  end
 end
